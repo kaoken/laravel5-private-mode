@@ -1,0 +1,23 @@
+{
+    "name": "kaoken/laravel5-private-mode",
+    "description": "Available in laravel5 or higher, similar to maintenance mode.",
+    "keywords": ["laravel"],
+    "license": "MIT",
+    "homepage": "https://github.com/kaoken/laravel5-private-mode",
+    "require": {
+        "php": ">=5.6.4",
+        "laravel/framework": "~5.0",
+        "symfony/http-foundation": "~3.2"
+    },
+    "authors": [
+        {
+            "name": "kaoken",
+            "homepage": "https://github.com/kaoken/laravel5-private-mode"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kaoken\\Laravel5PrivateMode\\": "src/"
+        }
+    }
+}
