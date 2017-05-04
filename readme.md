@@ -1,11 +1,19 @@
 # laravel5-private-mode
 [![Build Status](https://img.shields.io/travis/markdown-it/markdown-it/master.svg?style=flat)](https://github.com/kaoken/markdown-it-php)
-[![composer version](https://img.shields.io/badge/version-0.1.2-blue.svg)](https://github.com/kaoken/markdown-it-php)
+[![composer version](https://img.shields.io/badge/version-0.1.3-blue.svg)](https://github.com/kaoken/markdown-it-php)
 [![licence](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/kaoken/markdown-it-php)
 [![laravel version](https://img.shields.io/badge/Laravel%20version-≧5.0-red.svg)](https://github.com/kaoken/markdown-it-php)
 
 メンテナンスモードと似ていて、許されたIPまたは、ログインフォーム（表示時）でパスワードが一致したユーザーのみ
 **プライベートモード**が無効化される。
+
+
+## `composer.php`へ追加。
+``` php
+"require": {
+    "kaoken/laravel5-private-mode":"^0.1.3"
+  },
+```
 
 ## `app\Http\Kernel.php`へ追加
 ``` php
@@ -53,6 +61,12 @@ PRIVATE_MODE_PASSWORD=hoge-hoge
 
 ## `resources\views`へ追加
 このディレクトリ内の`views\private_mode`をコピー＆ペーストします。
+* `private_mode`
+  * `layouts`
+    * `app.blade.php` は、基本となるレイアウト
+  * `503.blade.php` は、`PRIVATE_MODE_LOGIN_FORM`が`false`で、`PRIVATE_SITE_SAFE_IP`の対象外IPの呼び出される。
+  * `login.blade.php`は、`PRIVATE_MODE_LOGIN_FORM`が`true`で、`PRIVATE_SITE_SAFE_IP`の対象外IPの呼び出される。
+
 
 
 ## License
