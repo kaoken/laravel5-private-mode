@@ -1,32 +1,33 @@
 # laravel5-private-mode
 [![Build Status](https://img.shields.io/travis/markdown-it/markdown-it/master.svg?style=flat)](https://github.com/kaoken/markdown-it-php)
-[![composer version](https://img.shields.io/badge/version-0.1.3-blue.svg)](https://github.com/kaoken/markdown-it-php)
+[![composer version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/kaoken/markdown-it-php)
 [![licence](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/kaoken/markdown-it-php)
-[![laravel version](https://img.shields.io/badge/Laravel%20version-≧5.0-red.svg)](https://github.com/kaoken/markdown-it-php)
+[![laravel version](https://img.shields.io/badge/Laravel%20version-≧5.4-red.svg)](https://github.com/kaoken/markdown-it-php)
 
-メンテナンスモードと似ていて、許されたIPまたは、ログインフォーム（表示時）でパスワードが一致したユーザーのみ
-**プライベートモード**が無効化される。
+Similar to the maintenance mode, **Private mode** 
+can be invalidated if the user matches the permitted IP group,
+ the password matched in the login form (when displayed), 
+ the `.env` file` APP_ENV=testing`Only.
 
-
-## `composer.php`へ追加。
+## Added to `composer.php`.
 ``` php
 "require": {
-    "kaoken/laravel5-private-mode":"^0.1.3"
+    "kaoken/laravel5-private-mode":"^1.0.0"
   },
 ```
 
-## `app\Http\Kernel.php`へ追加
+## Added to `app\Http\Kernel.php`.
 ``` php
     protected $middleware = [
         ...
-        // 追加
+        // add
         \Kaoken\Laravel5PrivateMode\PrivateModeMiddleware::class
     ],
 
 ```
 
 
-## `.env`へ追加
+## Added to `.env`.
 ```
 ################################
 ################################
@@ -42,30 +43,30 @@ PRIVATE_MODE_PASSWORD=hoge-hoge
 
 ```
 
-* `PRIVATE_SITE_VALID` で、このミドルウェアの有効・無効を表す。
-  * デフォルトで `false`
-  * `true` の場合、有効
-  * `false` の場合、無効
-* `PRIVATE_MODE_LOGIN_FORM`は、ログインフォームの非表示を表す。
-  * デフォルトで `false`
-  * `true` の場合、ログインフォームが表示され、`PRIVATE_MODE_PASSWORD`のパスワードと一致した場合、
-  `PRIVATE_SITE_SAFE_IP`以外のIPでも、プライベートモードが無効化される。
-  * `false` の場合、非表示
+* `PRIVATE_SITE_VALID` represents validity / invalidity of this middleware.
+  * `false` by default.
+  * `true`, valid
+  * `false`, invalid
+* `PRIVATE_MODE_LOGIN_FORM` represents the hidden login form.
+  * `false` by default.
+  * If it is `true`, the login form is displayed, and if it matches the password of` PRIVATE_MODE_PASSWORD`, private mode will be invalidated even for IPs other than `PRIVATE_SITE_SAFE_IP`.
+  * `false`, hidden
 * `PRIVATE_MODE_PASSWORD`
-  * デフォルトで、ランダムな文字列になる。
-  * `PRIVATE_MODE_LOGIN_FORM`が、`true`の場合使用する。
-* `PRIVATE_SITE_SAFE_IP` は、プライベートモードが無効化されるIPを追加する。
-  * デフォルトで、`192.168.0.1/24`
-  * カンマで複数追加することができ、CIDRフォーマットまで対応している。
+  * default, it is a random string.
+  * `PRIVATE_MODE_LOGIN_FORM`, If `true`, use it.
+* `PRIVATE_SITE_SAFE_IP` adds an IP group for which private mode is invalidated.
+  * default, `192.168.0.1/24`
+  * Multiple entries can be added with a comma, and it corresponds to CIDR format.
 
 
-## `resources\views`へ追加
-このディレクトリ内の`views\private_mode`をコピー＆ペーストします。
+## Added to `resources\views\vendor`
+Copy and paste `laravel5-private-mode\resources\views\private_mode` in this directory.
+
 * `private_mode`
   * `layouts`
-    * `app.blade.php` は、基本となるレイアウト
-  * `503.blade.php` は、`PRIVATE_MODE_LOGIN_FORM`が`false`で、`PRIVATE_SITE_SAFE_IP`の対象外IPの呼び出される。
-  * `login.blade.php`は、`PRIVATE_MODE_LOGIN_FORM`が`true`で、`PRIVATE_SITE_SAFE_IP`の対象外IPの呼び出される。
+    * `app.blade.php` is the basic layout.
+  * In the case of `PRIVATE_MODE_LOGIN_FORM=false`, `503.blade.php` is called when` PRIVATE_SITE_SAFE_IP` is not applicable IP group.
+  * In the case of `PRIVATE_MODE_LOGIN_FORM=true`, `login.blade.php` is called when`PRIVATE_SITE_SAFE_IP` is not applicable IP group.
 
 
 
