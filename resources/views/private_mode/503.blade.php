@@ -1,4 +1,4 @@
-@extends('private_mode.layouts.app')
+@extends('vendor.private_mode.layouts.app')
 
 @section('title')
 	503 Service Unavailable

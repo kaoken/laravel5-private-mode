@@ -67,22 +67,22 @@ class PrivateModeMiddleware extends BaseVerifier
                         ]);
 
                         if ($validator->fails()) {
-                            return new Response(view('private_mode.login',['errors'=>$validator->errors()->all()]));
+                            return new Response(view('vendor.private_mode.login',['errors'=>$validator->errors()->all()]));
                         }
 
                         if( $all['password'] == env('PRIVATE_MODE_PASSWORD', md5(rand().''))){
                             session([$sessionKey => true]);
                             return redirect('/');
                         }else{
-                            return new Response(view('private_mode.login',['errors'=>['Passwords do not match.']]));
+                            return new Response(view('vendor.private_mode.login',['errors'=>['Passwords do not match.']]));
                         }
                     }
-                    return new Response(view('private_mode.login',['errors'=>[]]));
+                    return new Response(view('vendor.private_mode.login',['errors'=>[]]));
                 }else{
                     return $next($request);
                 }
             }
-            return new Response(view('private_mode.503'));
+            return new Response(view('vendor.private_mode.503'));
         }
 
         return $next($request);
