@@ -1,8 +1,8 @@
 # laravel5-private-mode
 [![Build Status](https://img.shields.io/travis/markdown-it/markdown-it/master.svg?style=flat)](https://github.com/kaoken/markdown-it-php)
-[![composer version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/kaoken/markdown-it-php)
+[![composer version](https://img.shields.io/badge/version-1.0.2-blue.svg)](https://github.com/kaoken/markdown-it-php)
 [![licence](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/kaoken/markdown-it-php)
-[![laravel version](https://img.shields.io/badge/Laravel%20version-≧5.4-red.svg)](https://github.com/kaoken/markdown-it-php)
+[![laravel version](https://img.shields.io/badge/Laravel%20version-≧5.5-red.svg)](https://github.com/kaoken/markdown-it-php)
 
 メンテナンスモードと似ていて、**プライベートモード**が無効化されるには、
 許可したIP群と一致、ログインフォーム（表示時）で
@@ -12,7 +12,7 @@
 ## `composer.php`へ追加。
 ``` php
 "require": {
-    "kaoken/laravel5-private-mode":"^1.0.1"
+    "kaoken/laravel5-private-mode":"^1.0"
   },
 ```
 
