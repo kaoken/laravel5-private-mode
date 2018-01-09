@@ -6,7 +6,7 @@
     "homepage": "https://github.com/kaoken/laravel5-private-mode",
     "require": {
         "php": ">=7.0",
-        "laravel/framework": "~5.5",
+        "laravel/framework": "5.5.*",
         "symfony/http-foundation": "~3.2"
     },
     "authors": [

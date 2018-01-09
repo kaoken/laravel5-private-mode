@@ -51,8 +51,7 @@ class PrivateModeMiddleware extends BaseVerifier
                 return $next($request);
             };
 
-            $isLogin = strtolower(env('PRIVATE_MODE_LOGIN_FORM',false));
-            $isLogin =  $isLogin === 'true' || $isLogin === 't' || $isLogin === '1';
+            $isLogin = env('PRIVATE_MODE_LOGIN_FORM',false);
             if (
                 ($this->isReading($request) ||
                     $this->runningUnitTests() ||

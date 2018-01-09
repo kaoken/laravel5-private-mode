@@ -1,6 +1,6 @@
 # laravel5-private-mode
 [![Build Status](https://img.shields.io/travis/markdown-it/markdown-it/master.svg?style=flat)](https://github.com/kaoken/markdown-it-php)
-[![composer version](https://img.shields.io/badge/version-1.0.2-blue.svg)](https://github.com/kaoken/markdown-it-php)
+[![composer version](https://img.shields.io/badge/version-1.2.1-blue.svg)](https://github.com/kaoken/markdown-it-php)
 [![licence](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/kaoken/markdown-it-php)
 [![laravel version](https://img.shields.io/badge/Laravel%20version-≧5.5-red.svg)](https://github.com/kaoken/markdown-it-php)
 
@@ -9,11 +9,9 @@ can be invalidated if the user matches the permitted IP group,
  the password matched in the login form (when displayed), 
  the `.env` file` APP_ENV=testing`Only.
 
-## Added to `composer.php`.
-``` php
-"require": {
-    "kaoken/laravel5-private-mode":"^1.0"
-  },
+## composer
+```bash
+composer require kaoken/laravel5-private-mode
 ```
 
 ## Added to `app\Http\Kernel.php`.

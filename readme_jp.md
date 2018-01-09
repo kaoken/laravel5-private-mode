@@ -1,6 +1,6 @@
 # laravel5-private-mode
 [![Build Status](https://img.shields.io/travis/markdown-it/markdown-it/master.svg?style=flat)](https://github.com/kaoken/markdown-it-php)
-[![composer version](https://img.shields.io/badge/version-1.0.2-blue.svg)](https://github.com/kaoken/markdown-it-php)
+[![composer version](https://img.shields.io/badge/version-1.2.1-blue.svg)](https://github.com/kaoken/markdown-it-php)
 [![licence](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/kaoken/markdown-it-php)
 [![laravel version](https://img.shields.io/badge/Laravel%20version-≧5.5-red.svg)](https://github.com/kaoken/markdown-it-php)
 
@@ -9,11 +9,9 @@
 パスワードが一致したユーザー、`.env`ファイル`APP_ENV=testing`の場合のみ。
 
 
-## `composer.php`へ追加。
-``` php
-"require": {
-    "kaoken/laravel5-private-mode":"^1.0"
-  },
+## composer
+```bash
+composer require kaoken/laravel5-private-mode
 ```
 
 ## `app\Http\Kernel.php`へ追加
@@ -40,7 +38,6 @@ PRIVATE_MODE_VALID=true
 PRIVATE_MODE_LOGIN_FORM=true
 PRIVATE_MODE_IP=192.168.0.1/24,127.0.0.1
 PRIVATE_MODE_PASSWORD=hoge-hoge
-
 ```
 
 * `PRIVATE_SITE_VALID` で、このミドルウェアの有効・無効を表す。
@@ -58,6 +55,7 @@ PRIVATE_MODE_PASSWORD=hoge-hoge
 * `PRIVATE_SITE_SAFE_IP` は、プライベートモードが無効化されるIPを追加する。
   * デフォルトで、`192.168.0.1/24`
   * カンマで複数追加することができ、CIDRフォーマットまで対応している。
+
 
 
 ## `resources\views\vendor`へ追加
