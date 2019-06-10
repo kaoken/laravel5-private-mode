@@ -1,8 +1,8 @@
 # laravel5-private-mode
 [![Build Status](https://img.shields.io/travis/markdown-it/markdown-it/master.svg?style=flat)](https://github.com/kaoken/markdown-it-php)
-[![composer version](https://img.shields.io/badge/version-1.2.1-blue.svg)](https://github.com/kaoken/markdown-it-php)
+[![composer version](https://img.shields.io/badge/version-1.8.0-blue.svg)](https://github.com/kaoken/markdown-it-php)
 [![licence](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/kaoken/markdown-it-php)
-[![laravel version](https://img.shields.io/badge/Laravel%20version-≧5.5-red.svg)](https://github.com/kaoken/markdown-it-php)
+[![laravel version](https://img.shields.io/badge/Laravel%20version-=5.8-red.svg)](https://github.com/kaoken/markdown-it-php)
 
 Similar to the maintenance mode, **Private mode** 
 can be invalidated if the user matches the permitted IP group,
